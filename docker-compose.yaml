@@ -5,20 +5,20 @@ networks:
 services:
  web:
   image: web:v1
-  containername: web
+  container_name: web
   depends_on:
   - catalogue
  catalogue:
   image: catlogue:v1
-  containername: catalogue
+  container_name: catalogue
   depends_on:
   - mongodb
  mongodb:
   image: mongo:v1
-  containername: mongo
+  container_name: mongo
  user:
   image: user:v1
-  containername: user
+  container_name: user
   depends_on:
   - mongodb
   - redis

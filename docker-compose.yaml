@@ -15,4 +15,10 @@ catalogue:
 mongodb:
  image: mongo:v1
  containername: mongo
+ user:
+  image: user:v1
+  containername: user
+  depends_on:
+  - mongodb
+  - redis
  

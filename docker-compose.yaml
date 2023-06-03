@@ -2,23 +2,24 @@ version: "3.9"
 networks:
  roboshop:
   driver: bridge
-web:
- image: web:v1
- containername: web
- depends_on:
- - catalogue
-catalogue:
- image: catlogue:v1
- containername: catalogue
- depends_on:
- - mongodb
-mongodb:
- image: mongo:v1
- containername: mongo
-user:
- image: user:v1
- containername: user
- depends_on:
- - mongodb
- - redis
+services:
+ web:
+  image: web:v1
+  containername: web
+  depends_on:
+  - catalogue
+ catalogue:
+  image: catlogue:v1
+  containername: catalogue
+  depends_on:
+  - mongodb
+ mongodb:
+  image: mongo:v1
+  containername: mongo
+ user:
+  image: user:v1
+  containername: user
+  depends_on:
+  - mongodb
+  - redis
  
